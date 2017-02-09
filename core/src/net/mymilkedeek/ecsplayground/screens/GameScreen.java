@@ -6,6 +6,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import net.mymilkedeek.ecsplayground.GameInstance;
 import net.mymilkedeek.ecsplayground.factories.GameEntityFactory;
+import net.mymilkedeek.ecsplayground.systems.InputSystem;
 import net.mymilkedeek.ecsplayground.systems.PlayerTagSystem;
 import net.mymilkedeek.ecsplayground.systems.RenderingSystem;
 
@@ -24,6 +25,7 @@ public class GameScreen extends ScreenAdapter {
         WorldConfigurationBuilder builder = new WorldConfigurationBuilder();
         builder.with(
                 new PlayerTagSystem(),
+                new InputSystem(),
                 new RenderingSystem(new ShapeRenderer())
         );
 
